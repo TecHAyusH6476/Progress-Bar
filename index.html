@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main{
+            padding: 40px;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(236, 226, 230, 0.659);
+            border: 2px solid rgb(156, 162, 160);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            
+            
+        }
+        .head{
+            border: 1px solid black;
+      text-align: center;
+        }
+        .input{
+            position: relative;
+            height: 40vh;
+            border: 1px solid black;
+        }
+        .i1{
+            position: absolute;
+            top: 35%;
+            left: 15%;
+        }
+        .First{
+            width: 14em;
+            height: 2em;
+        }
+        .i2{
+            position: absolute;
+            top: 55%;
+            left: 15%;
+        }
+        .Max{
+            width: 14em;
+            height: 2em;
+        }
+        input{
+            background-color: gainsboro;
+        }
+        .bar{
+            position:absolute;
+            top:20%;
+            left:75%;
+         height: 20vh;
+         width: 10vw;
+         box-shadow: 2px 2px #888888;
+         border: 1px solid black;
+         display: flex;
+         align-items: flex-end;
+        }
+        .dyna{
+            width: 100%;
+            
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="head">
+            <h2>Startoon Lab Assignment</h2>
+        </div>
+        <div class="input">
+            <div class="i1">
+                <input class="First" id="a" type="text" placeholder="Input Value" onkeyup="example()">
+            </div>
+            <br>
+            <div class="i2">
+                <input class="Max" id="m" type="text" placeholder="Max Value">
+            </div>
+           <div class="bar" >
+            <div class="dyna" id="lulu">
+
+            </div>
+           </div>
+            
+        </div>
+       
+    </div>
+    <script>
+        function example() {
+     
+         
+      
+         let givenNumber = document.querySelector("#a").value;
+         let max = document.querySelector("#m").value;
+         let a1=parseInt(givenNumber);
+         let a2=parseInt(max);
+        
+         if(a1>a2)
+          window.alert("Input value cant be greater than max")
+         else{
+
+            let h=parseFloat(a1/a2);
+        let change=document.getElementById('lulu');
+        change.style.height=`${h*100}%`;
+         }
+
+     
+   }
+   example();
+        
+    </script>
+</body>
+</html>
